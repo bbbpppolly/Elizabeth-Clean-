@@ -1,0 +1,22 @@
+{
+    // Name of the template, indicating it is for 404 error pages
+    "name": "Template 404",
+    
+    // Layout file to be used, in this case, a custom theme layout
+    "layout": "custom_theme",
+    
+    // Wrapper configuration for the template, specifying an HTML div element
+    // with an ID of '404_template', a class of 'custom-class', and a custom attribute
+    "wrapper": "div#404_template.custom-class[custom-attribute=test]",
+    
+    // Sections included in this template
+    "sections": {
+        // The 'template-404' section with type 'example-404'
+        "template-404": {
+            "type": "example-404"
+        }
+    },
+    
+    // Order in which the sections should be rendered
+    "order": ["template-404"]
+}
