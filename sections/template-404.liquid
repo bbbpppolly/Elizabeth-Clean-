@@ -1,0 +1,63 @@
+<div class="flex flex-col h-screen items-center justify-center bg-gray-100 text-center p-4">
+  <div class="bg-white shadow-lg rounded-lg p-8 max-w-md w-full">
+    <div id="lottie-animation" class="w-48 h-48 mx-auto mb-4"></div>
+    <h1 class="text-4xl font-bold text-gray-800 mb-2">{{ section.settings.title }}</h1>
+    <p class="text-gray-600 mb-6">{{ section.settings.subtext_title }}</p>
+    <a href="/" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300"
+      >Return to Home</a
+    >
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var animationContainer = document.getElementById('lottie-animation');
+    lottie.loadAnimation({
+      container: animationContainer,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: '{{ "404animation.json" | asset_url }}', // Path to the Lottie JSON file
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "template-404",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "404 - Page Not Found",
+      "label": "404 Heading Title"
+    },
+    {
+      "type": "text",
+      "id": "subtext_title",
+      "default": "The page you are looking for cannot be found. It may have been moved or deleted.",
+      "label": "404 Subtext Title"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "lottie_animation",
+      "name": "Lottie Animation",
+      "settings": [
+        {
+          "type": "text",
+          "id": "lottie_animation_id",
+          "label": "Lottie Animation ID",
+          "default": "lottie-animation"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "404 Template",
+      "category": "Pages"
+    }
+  ]
+}
+{% endschema %}
