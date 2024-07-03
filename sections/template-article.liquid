@@ -1,0 +1,75 @@
+<!-- File: sections/customer-service.liquid -->
+
+<section id="template-service" class="py-8 bg-gray-100 text-center">
+  <div class="container mx-auto max-w-3xl px-4">
+    <h2 class="text-2xl font-semibold mb-4">{{ section.settings.heading }}</h2>
+    <p class="mb-4">{{ section.settings.sub_heading }}</p>
+    <ul class="flex flex-col sm:flex-row flex-wrap justify-center items-center mb-4 space-y-2 sm:space-y-0 sm:space-x-4">
+      <li class="flex items-center text-lg w-full sm:w-auto"><span class="mr-2">📞</span> Telefon</li>
+      <li class="flex items-center text-lg w-full sm:w-auto"><span class="mr-2">💬</span> Chat</li>
+      <li class="flex items-center text-lg w-full sm:w-auto"><span class="mr-2">📧</span> E-mail</li>
+      <li class="flex items-center text-lg w-full sm:w-auto"><span class="mr-2">📱</span> Facebook Messenger</li>
+      <li class="flex items-center text-lg w-full sm:w-auto"><span class="mr-2">📸</span> Instagram</li>
+    </ul>
+    <div class="text-left text-lg">
+      <p class="mb-2">Åbningstider:</p>
+      <ul class="list-disc list-inside space-y-1">
+        <li>Hverdage: {{ section.settings.opening_hours_weekdays }}</li>
+        <li>Weekender: {{ section.settings.opening_hours_weekends }}</li>
+        <li>Helligdage: {{ section.settings.opening_hours_holidays }}</li>
+      </ul>
+    </div>
+    <p class="mt-4">{{ section.settings.closing_statement }}</p>
+    <p class="mt-2">{{ section.settings.contact_prompt }}</p>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Customer Service",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Når du handler hos Den Sidste Flaske, er vores mål at give dig en enestående kundeoplevelse."
+    },
+    {
+      "type": "textarea",
+      "id": "sub_heading",
+      "label": "Sub Heading",
+      "default": "Derfor står vores team klar til at assistere dig via:"
+    },
+    {
+      "type": "text",
+      "id": "opening_hours_weekdays",
+      "label": "Opening Hours Weekdays",
+      "default": "08:00 - 20:00"
+    },
+    {
+      "type": "text",
+      "id": "opening_hours_weekends",
+      "label": "Opening Hours Weekends",
+      "default": "10:00 - 16:00"
+    },
+    {
+      "type": "text",
+      "id": "opening_hours_holidays",
+      "label": "Opening Hours Holidays",
+      "default": "10:00 - 15:00"
+    },
+    {
+      "type": "text",
+      "id": "closing_statement",
+      "label": "Closing Statement",
+      "default": "Uanset hvad du har brug for hjælp med, stort som småt, er vi her for dig."
+    },
+    {
+      "type": "text",
+      "id": "contact_prompt",
+      "label": "Contact Prompt",
+      "default": "Tøv ikke med at tage kontakt – vi er klar til at hjælpe!"
+    }
+  ]
+}
+{% endschema %}
