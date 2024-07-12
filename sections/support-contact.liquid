@@ -1,0 +1,87 @@
+<!-- sections/support-contact.liquid -->
+<div class="support-contact py-8 bg-gray-100">
+  <div class="container mx-auto max-w-5xl px-4 text-center">
+    <h3 class="text-2xl font-semibold mb-4">{{ section.settings.heading }}</h3>
+    <p class="mb-6">{{ section.settings.description }}</p>
+    <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+      <div class="support-method border rounded-lg p-4 w-full sm:w-auto">
+        <a href="{{ section.settings.chat_link }}" target="_blank" class="block">
+          <div class="icon text-4xl mb-2">💬</div>
+          <div class="text text-lg">{{ section.settings.chat_text }}</div>
+        </a>
+      </div>
+      <div class="support-method border rounded-lg p-4 w-full sm:w-auto">
+        <a href="tel:{{ section.settings.phone_number }}" class="block">
+          <div class="icon text-4xl mb-2">📞</div>
+          <div class="text text-lg">
+            {{ section.settings.phone_text -}}
+            <br>
+            {{ section.settings.phone_number }}
+          </div>
+        </a>
+      </div>
+      <div class="support-method border rounded-lg p-4 w-full sm:w-auto">
+        <a href="mailto:{{ section.settings.email }}" class="block">
+          <div class="icon text-4xl mb-2">📧</div>
+          <div class="text text-lg">{{ section.settings.email_text }}</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Support Contact",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "SUPPORT"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "We'd love to engage in some good old fashioned conversation. Available 7 days, 9am–5pm Pacific"
+    },
+    {
+      "type": "text",
+      "id": "chat_link",
+      "label": "Chat Link",
+      "default": "#"
+    },
+    {
+      "type": "text",
+      "id": "chat_text",
+      "label": "Chat Text",
+      "default": "Start a Chat"
+    },
+    {
+      "type": "text",
+      "id": "phone_number",
+      "label": "Phone Number",
+      "default": "(415) 304-8208"
+    },
+    {
+      "type": "text",
+      "id": "phone_text",
+      "label": "Phone Text",
+      "default": "Text"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Email",
+      "default": "support@example.com"
+    },
+    {
+      "type": "text",
+      "id": "email_text",
+      "label": "Email Text",
+      "default": "Email Us"
+    }
+  ]
+}
+{% endschema %}
