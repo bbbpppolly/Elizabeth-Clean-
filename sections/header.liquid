@@ -14,6 +14,7 @@
             <div class="relative">
               <button type="button" class="inline-flex items-center text-base text-gray-500 hover:text-gray-900">
                 {{ link.title }}
+                {% render 'icon-dropdown' %}
               </button>
             </div>
           {% else %}
@@ -25,7 +26,9 @@
       </nav>
 
       <div class="hidden md:flex items-center justify-end md:flex-1 space-x-5">
-        <a href="{{ routes.cart_url }}" class="whitespace-nowrap text-base text-gray-500 hover:text-gray-900"> Cart </a>
+        <a href="{{ routes.cart_url }}" class="whitespace-nowrap text-base text-gray-500 hover:text-gray-900">
+          {% render 'icon-shopping-bag' %}
+        </a>
 
         <a href="{{ routes.account_login_url }}" class="text-base text-gray-500 hover:text-gray-900">Login</a>
         <a href="{{ routes.account_register_url }}" class="text-base text-gray-500 hover:text-gray-900">Register</a>
