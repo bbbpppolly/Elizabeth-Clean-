@@ -1,0 +1,19 @@
+{
+  "name": "elizabeth_clean",
+  "version": "1.0.0",
+  "description": "[![Generic badge](https://img.shields.io/badge/course%20available%3F-yes-green.svg)](https://shields.io/)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "shopify theme dev",
+    "dev-tailwind": "npx tailwindcss -i ./src/tailwind.css -o ./assets/application.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.16"
+  },
+  "dependencies": {
+    "@jridgewell/gen-mapping": "^0.3.5"
+  }
+}
