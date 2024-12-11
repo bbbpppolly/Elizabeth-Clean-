@@ -1,0 +1,34 @@
+{% comment %}
+  "title": "Not found",
+  "subtext_html": "The page you were looking for does not exist"
+{% endcomment %}
+
+{% comment %}
+  <h1>{{ 'general.404.title' | t }}</h1>
+  <p>{{ 'general.404.subtext_html' | t }}</p>
+{% endcomment %}
+<h1>{{ section.settings.title }}</h1>
+<p>{{ section.settings.subtitle }}</p>
+
+{% comment %} settings []>  type / id / default / label {% endcomment %}
+{% comment %} id: 變數名稱 {% endcomment %}
+{% comment %} default: 變數內容   {% endcomment %}
+{% comment %} label 在 shopify 的變數名稱 {% endcomment %}
+{% schema %}
+{
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Not found ;)",
+      "label": "404 title"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "default": "The page you were looking for does not exist!!",
+      "label": "404 sub-title"
+    }
+  ]
+}
+{% endschema %}

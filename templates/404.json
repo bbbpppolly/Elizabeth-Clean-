@@ -1,0 +1,10 @@
+// template-404 : 在 sections 中的檔名 (sections/template-404.liquid)
+// order
+{
+  "sections":{
+    "template":{
+      "type":"template-404"
+    }
+  },
+  "order":["template"]
+}
