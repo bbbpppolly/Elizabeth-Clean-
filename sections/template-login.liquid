@@ -1,1 +1,105 @@
-login
+<div
+  class="h-full flex items-center justify-center py-12 px-6 md:px-4 lg:px-8"
+  x-data="{ loginForm: true, pwRecoverForm: false }"
+>
+  {% comment %} login form {% endcomment %}
+  <div x-show="loginForm" class="max-w-md w-full space-y-8">
+    <div>
+      <h1 class="text-center text-3xl font-bold mt-6">Sign in to your account</h1>
+    </div>
+    <div class="mt-8">
+      {% form 'customer_login' %}
+        {% if form.errors %}
+          <div class="relative border border-red-400 bg-red-100 text-red 700 px-4 py-3" role="alert">
+            <strong class="font-bold">Error!</strong>
+            <p class="block sm:inline">{{ form.errors | default_errors }}</p>
+          </div>
+        {% endif %}
+        <div class="my-2">
+          <label for="email_address" class="sr-only">Email address</label>
+          <input
+            type="email"
+            name="customer[email]"
+            id="email_address"
+            autocomplete="email"
+            class="relative block w-full px-3 py-2 border"
+            placeholder="Email address"
+          >
+        </div>
+        {% if form.password_needed %}
+          <div class="my-2">
+            <label for="password" class="sr-only">Password</label>
+            <input
+              type="password"
+              name="customer[password]"
+              id="password"
+              autocomplete="current-password"
+              class="relative block w-full px-3 py-2 border"
+              placeholder="Password"
+            >
+          </div>
+        {% endif %}
+        <div class="my-2 text-sm">
+          <a
+            x-on:click="loginForm = false; pwRecoverForm = true"
+            href="#"
+            class="underline text-gray-500 hover:text-gray-900"
+          >
+            Forgot your password?
+          </a>
+        </div>
+        <div>
+          <button
+            type="submit"
+            class="relative w-full py-2 px-4 text-sm font-medium text-white bg-gray-600 hover:bg-gray-900"
+          >
+            Sign in
+          </button>
+        </div>
+      {% endform %}
+    </div>
+  </div>
+  {% comment %} pw recover form {% endcomment %}
+  <div x-show="pwRecoverForm" class="max-w-md w-full space-y-8">
+    <div>
+      <h1 class="text-center text-3xl font-bold mt-6">Recover your password</h1>
+    </div>
+    <div class="mt-8">
+      {% form 'recover_customer_password' %}
+        {% if form.errors %}
+          <div class="relative border border-red-400 bg-red-100 text-red 700 px-4 py-3" role="alert">
+            <strong class="font-bold">Error!</strong>
+            <p class="block sm:inline">{{ form.errors | default_errors }}</p>
+          </div>
+        {% endif %}
+        <div class="my-2">
+          <label for="email" class="sr-only">Email address</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            autocomplete="email"
+            class="relative block w-full px-3 py-2 border"
+            placeholder="Email address"
+          >
+        </div>
+        <div>
+          <button
+            type="submit"
+            class="relative w-full py-2 px-4 text-sm font-medium text-white bg-gray-600 hover:bg-gray-900"
+          >
+            Recover password
+          </button>
+        </div>
+        <div class="mt-8 text-sm">
+          <a
+            x-on:click="loginForm = true; pwRecoverForm = false"
+            href="#"
+            class="underline text-gray-500 hover:text-gray-900"
+            >Back to login</a
+          >
+        </div>
+      {% endform %}
+    </div>
+  </div>
+</div>

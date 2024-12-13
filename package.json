@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "shopify theme dev",
     "dev-tailwind": "npx tailwindcss -i ./src/tailwind.css -o ./assets/application.css --watch",
+    "connect": "shopify theme dev --store new-test-store-3424 ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

@@ -10,6 +10,8 @@
     {{ content_for_header }}
     <!-- 引入 Vue.js CDN -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js" defer></script>
+    <!-- 引入 Alpine.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
     <!-- Header hook for plugins -->
     {{ 'application.css' | asset_url | stylesheet_tag }}
